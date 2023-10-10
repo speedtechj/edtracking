@@ -23,13 +23,13 @@
         </div>
         <!-- menu -->
         <div class="text-white hidden space-x-6 md:flex ml-80">
-          <a href="https://forexcargodeals.com/calgary/book-online" class="hover:border-b-2 hover:border-[#ffdd02] duration-75"> Send Goods</a>
-          <a href="/" class=" hover:border-b-2 hover:border-[#ffdd02] duration-75">Track Edmonton</a>
+          <a href="https://forexcargodeals.com/edmonton/book-online" class="hover:border-b-2 hover:border-[#ffdd02] duration-75"> Send Goods</a>
+          <a href="https://calgarytracking.forexcargodeals.com" class=" hover:border-b-2 hover:border-[#ffdd02] duration-75">Track Calgary</a>
      
         </div>
         <!-- button -->
         <a
-          href="https://www.google.com/maps/dir//forex+cargo+calgary/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x5371706a155ad99d:0xec2e45f16fabcf8b?sa=X&ved=2ahUKEwivju-uk8uBAxXMHzQIHYPBCmEQ9Rd6BAhNEAA&ved=2ahUKEwivju-uk8uBAxXMHzQIHYPBCmEQ9Rd6BAhcEAU"
+          href="https://www.google.com/maps/dir/51.196021,-113.9976068/forex+edmonton/@52.376909,-114.9471636,8z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x53a0213b074b3cc1:0xaedabd42713f8626!2m2!1d-113.6104868!2d53.5616109?entry=ttu"
           class=" hidden text-white p-3 px-6 pt-2 rounded-full border-solid border-[#ffdd02] border-2 baseline mr-32 hover:text-[#355691] duration-300 md:block"
           >Direction</a>
           <!-- Hamburger Icon -->
@@ -49,8 +49,8 @@
           id="menu"
           class=" text-[#355691] absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
         >
-          <a href="https://forexcargodeals.com/calgary/book-online">Send Goods</a>
-          <a href="/">Track Edmonton</a>
+          <a href="https://forexcargodeals.com/edmonton/book-online">Send Goods</a>
+          <a href="https://calgarytracking.forexcargodeals.com/">Track Calgary</a>
          
         </div>
       </div>
@@ -62,36 +62,15 @@
 
     <div class=" container md:w-1/2 md:ml-96 mx-auto ml-6">
         <div class="flex flex-col text-left mt-16 space-y-4 ">
-             <h1 class="text-4xl ">Track a transfer</h1>
-             <p class="text-lg ">Your Invoice Number.</p>
+             <h1 class="text-4xl ">Track Invoice</h1>
+             <p class="text-lg ">Your Track Number.</p>
              <p class="text-2xl font-black ">{{ $invoice1 }}</p>
         </div>
     <!-- Tracking order Steps -->
 
     <div class="flow-root mt-10 ml-6 mr-12 md:mx-0">
       <ul role="list" class="-mb-8">
-      @foreach ($batch as $index => $batches)
-    @if ($index < 6)
-        <li>
-            <div class="relative pb-8">
-                <div class="relative flex space-x-3">
-                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-                        <div>
-                            <p class="text-sm text-black">{{ $batches->description }} <span class="text-sm text-black ml-6 font-bold">{{ $batches->location }}</span></p>
-                            
-                        </div>
-                        <div class="whitespace-nowrap text-right text-sm text-black">
-                            <time datetime="2020-09-28">{{ $batches->date }}</time>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-    @endif
-@endforeach
-
-     
-    @foreach ($invoice as $invoices)
+     @foreach ($invoice as $invoices)
       <li>
          <div class="relative pb-8">
            <span class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
@@ -106,14 +85,13 @@
           <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
           
             <div>
-            <p class="text-sm text-gray-500 ">{{ $invoices->transinv }}</p>
 
-              <p class="text-sm text-gray-500 ">{{ $invoices->description }}<span class="font-medium text-gray-900 ml-6">{{ $invoices->location }}</span></p>
+              <p class="text-sm text-gray-500 ">{{ $invoices->trackstat }}</p>
             
             </div>
            
             <div class="whitespace-nowrap text-right text-sm text-gray-500">
-              <time datetime="2020-09-28">{{ $invoices->date }}</time>
+              <time datetime="2020-09-28">{{ $invoices->date_encode }}</time>
             </div>
           </div>
         </div>
@@ -126,7 +104,7 @@
   <a
           href="/"
           class=" rounded-full bg-[#ffdd02] p-3 baseline px-6 "
-          >Track Another Invoice</a>  
+          >Track Another One</a>  
   </div>
 
 </div> 
